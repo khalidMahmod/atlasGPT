@@ -177,7 +177,7 @@ CMAKE_ARGS="-DLLAMA_METAL=on" FORCE_CMAKE=1 pip install -U llama-cpp-python --no
 
 6. Wait until everything has loaded in. You should see something like `INFO:werkzeug:Press CTRL+C to quit`.
 
-7. Open up a second terminal and activate the same python environment.
+7. Open a second terminal and activate the same python environment.
 
 8. Navigate to the `/LOCALGPT/localGPTUI` directory.
 
