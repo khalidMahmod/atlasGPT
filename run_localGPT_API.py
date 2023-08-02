@@ -84,8 +84,8 @@ RETRIEVER = DB.as_retriever()
 # model_id = "TheBloke/WizardLM-7B-uncensored-GPTQ"
 # model_basename = "WizardLM-7B-uncensored-GPTQ-4bit-128g.compat.no-act-order.safetensors"
 
-model_id = "TheBloke/Llama-2-7B-Chat-GGML"
-model_basename = "llama-2-7b-chat.ggmlv3.q4_0.bin"
+model_id = "TheBloke/Llama-2-13B-chat-GPTQ"
+model_basename = "gptq_model-4bit-128g.safetensors"
 
 LLM = load_model(device_type=DEVICE_TYPE, model_id=model_id, model_basename=model_basename)
 
@@ -143,7 +143,7 @@ def run_ingest_route():
         if DEVICE_TYPE == "cpu":
             run_langest_commands.append("--device_type")
             run_langest_commands.append(DEVICE_TYPE)
-            
+
         result = subprocess.run(run_langest_commands, capture_output=True)
         if result.returncode != 0:
             return "Script execution failed: {}".format(result.stderr.decode("utf-8")), 500
